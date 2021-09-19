@@ -6,7 +6,7 @@ import java.net.Socket;
 public class Conexion
 {
     private final int PUERTO = 1234; //Puerto para la conexión
-    private final String HOST = "192.168.56.1"; //Host para la conexión
+    private final String HOST = "172.26.0.4"; //Host para la conexión
     protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
     protected ServerSocket ss; //Socket del servidor
     protected Socket cs; //Socket del cliente
