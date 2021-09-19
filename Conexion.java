@@ -3,25 +3,21 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Conexion
-{
-    private final int PUERTO = 1234; //Puerto para la conexión
-    private final String HOST = "192.168.56.1"; //Host para la conexión
-    protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
-    protected ServerSocket ss; //Socket del servidor
-    protected Socket cs; //Socket del cliente
-    protected DataOutputStream salidaServidor, salidaCliente; //Flujo de datos de salida
+public class Conexion {
+    private final int PUERTO = 1234;
+    private final String HOST = "192.168.56.1";
+    protected String mensajeServidor;
+    protected ServerSocket ss;
+    protected Socket cs;
+    protected DataOutputStream salidaServidor, salidaCliente;
 
-    public Conexion(String tipo) throws IOException //Constructor
+    public Conexion(String tipo) throws IOException // Constructor
     {
-        if(tipo.equalsIgnoreCase("servidor"))
-        {
-            ss = new ServerSocket(PUERTO);//Se crea el socket para el servidor en puerto 1234
-            cs = new Socket(); //Socket para el cliente
-        }
-        else
-        {
-            cs = new Socket(HOST, PUERTO); //Socket para el cliente en localhost en puerto 1234
+        if (tipo.equalsIgnoreCase("servidor")) {
+            ss = new ServerSocket(PUERTO);
+            cs = new Socket();
+        } else {
+            cs = new Socket(HOST, PUERTO);
         }
     }
 }

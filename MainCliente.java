@@ -9,7 +9,8 @@ public class MainCliente {
     private static Cliente client;
 
     public static void main(String[] args) throws IOException {
-        // client = new Cliente();
+        client = new Cliente();
+        client.startClient();
 
         System.out.println("Welcome to Poli Bank");
 
@@ -27,9 +28,7 @@ public class MainCliente {
 
             System.out.println("Press yes/y to continue, other key to leave");
             next = reader.readLine();
-        }
-
-        // cli.startClient(); //Se inicia el cliente
+        }      
     }
 
     private static void addBalances() throws IOException {
