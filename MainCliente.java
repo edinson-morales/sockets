@@ -10,7 +10,7 @@ public class MainCliente {
 
     public static void main(String[] args) throws IOException {
         client = new Cliente();
-        client.startClient();
+        //client.startClient();
 
         System.out.println("Welcome to Poli Bank");
 
@@ -42,7 +42,7 @@ public class MainCliente {
 
             String result = "OK";
             try {
-                // client.updateBalanceAccount(new Account(account, balance));
+                client.updateBalanceAccount(new Account(account, balance));
             } catch (Exception e) {
                 result = "NO_OK";
             }

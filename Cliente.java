@@ -25,9 +25,9 @@ public class Cliente extends Conexion {
     }
 
     public void updateBalanceAccount(Account account) throws IOException {
-        //salidaServidor = new DataOutputStream(cs.getOutputStream());
-        //salidaServidor.writeUTF(String.format("%s:%d", account.getAccount(), account.getBalance()));
-        //cs.close();
+        salidaServidor = new DataOutputStream(cs.getOutputStream());
+        salidaServidor.writeUTF(String.format("%s:%d", account.getAccount(), account.getBalance()));
+        cs.close();
     }
 
     public String getBalanceAccount(String account) throws IOException {
