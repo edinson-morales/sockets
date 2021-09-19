@@ -29,6 +29,8 @@ public class Servidor extends Conexion // Se hereda de conexión para hacer uso 
             // Se le envía un mensaje al cliente usando su flujo de salida
             salidaCliente.writeUTF("Petición recibida y aceptada");
 
+            createAccountsRepository();
+
             // Se obtiene el flujo entrante desde el cliente
             BufferedReader entrada = new BufferedReader(new InputStreamReader(cs.getInputStream()));
 
@@ -36,13 +38,13 @@ public class Servidor extends Conexion // Se hereda de conexión para hacer uso 
             {
                 // Se muestra por pantalla el mensaje recibido
                 System.out.println(mensajeServidor);
+		 String account = mensajeServidor.split(":")[0];
+                long balance = Long.parseLong(mensajeServidor.split(":")[1]);
 
-                createAccountsRepository();
-
-                setBalances("aaaaa", 332323);
+                setBalances(account, balance);
                 System.out.println("Successfully wrote to the file.");
     
-                System.out.println(String.format("Your total balance is %d", getBalances("aaaa")));                
+                System.out.println(String.format("Your total balance is %d", getBalances(account)));                
             }
 
             System.out.println("Fin de la conexión");

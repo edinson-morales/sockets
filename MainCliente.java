@@ -10,7 +10,7 @@ public class MainCliente {
 
     public static void main(String[] args) throws IOException {
         client = new Cliente();
-        //client.startClient();
+        client.startClient();
 
         System.out.println("Welcome to Poli Bank");
 
